@@ -31,6 +31,7 @@ export const store = configureStore({
 });
 
 export const persistor = persistStore(store);
+// persistor.purge();
 
 // Get the type of our store variable
 export type AppStore = typeof store;
