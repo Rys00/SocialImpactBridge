@@ -1,4 +1,5 @@
 import { ChangeEvent } from "react";
+import { useNavigate } from "react-router-dom";
 import { useAppDispatch, useAppSelector } from "../../store/hooks";
 import { selectSignUpData } from "../../store/register-form/register-form.selector";
 import { setSignUpData } from "../../store/register-form/register-form.slice";
@@ -11,6 +12,7 @@ const SignUpForm = () => {
   const formFields = useAppSelector(selectSignUpData);
   const { email, password, passwordRepeat, organizationType } = formFields;
   const dispatch = useAppDispatch();
+  const navigate = useNavigate();
   const handleChange = (
     event: ChangeEvent<HTMLInputElement | HTMLSelectElement>
   ) => {
@@ -18,7 +20,13 @@ const SignUpForm = () => {
     dispatch(setSignUpData({ ...formFields, [name]: value }));
   };
   return (
-    <form className={styles.form}>
+    <form
+      className={styles.form}
+      onSubmit={(e) => {
+        e.preventDefault();
+        navigate("/ngo-form");
+      }}
+    >
       <h1>Zarejestruj się</h1>
       <Input
         label="Adres e-mail"

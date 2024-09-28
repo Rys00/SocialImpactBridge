@@ -5,7 +5,23 @@ const INITIAL_STATE = {
     email: "",
     password: "",
     passwordRepeat: "",
-    organizationType: "",
+    organizationType: "ngo",
+  },
+  ngoData: {
+    krs: "",
+    nazwa: "",
+    nip: "",
+    regon: "",
+    kraj: "",
+    wojewodztwo: "",
+    powiat: "",
+    gmina: "",
+    miejscowosc: "",
+    adres: "",
+    mail: "",
+    adresStrony: "",
+    data: "",
+    celDzialania: "",
   },
 };
 
@@ -16,8 +32,11 @@ export const registerFormSlice = createSlice({
     setSignUpData(state, action) {
       state.signUpData = action.payload;
     },
+    setNgoData(state, action) {
+      state.ngoData = action.payload;
+    },
   },
 });
 
-export const { setSignUpData } = registerFormSlice.actions;
+export const { setSignUpData, setNgoData } = registerFormSlice.actions;
 export const registerFormReducer = registerFormSlice.reducer;

@@ -7,3 +7,8 @@ export const selectSignUpData = createSelector(
   [selectRegisterForm],
   (registerFormReducer) => registerFormReducer.signUpData
 );
+
+export const selectNgoData = createSelector(
+  [selectRegisterForm],
+  (registerFormReducer) => registerFormReducer.ngoData
+);

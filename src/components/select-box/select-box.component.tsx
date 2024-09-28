@@ -15,7 +15,9 @@ const SelectBox = (props: Props) => {
     >
       <select {...{ ...props, options: undefined }}>
         {props.options.map((option) => (
-          <option value={option.value}>{option.name}</option>
+          <option key={option.value} value={option.value}>
+            {option.name}
+          </option>
         ))}
       </select>
       <label
