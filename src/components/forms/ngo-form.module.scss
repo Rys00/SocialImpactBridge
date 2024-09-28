@@ -17,12 +17,30 @@
   border-radius: 20px;
   box-sizing: border-box;
   animation: rise 0.5s forwards ease-in-out;
-  width: 30vw;
 
   h1 {
     color: var(--primary);
     font-size: 24pt;
     margin: 0;
     padding-bottom: 30px;
+  }
+
+  .horizontal {
+    display: flex;
+    gap: 10px;
+  }
+
+  .hidden {
+    display: none;
+  }
+
+  .error {
+    color: red;
+  }
+
+  .data {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
   }
 }
