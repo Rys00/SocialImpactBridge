@@ -1,0 +1,46 @@
+.navbarContainer{
+width: 100%;
+  background-color: var(--background);
+  height: 3vw;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  box-shadow: 0 0 5px #0005;
+}
+
+  .logo{
+    height: 2vw;
+    width: 15vw;
+  }
+
+  .loginContainer{
+    display: flex;
+    flex-direction: row-reverse;
+    gap: 1vw;
+    align-items: center;
+    width: 15vw;
+  }
+
+    .loginButton{
+        margin-right: 2vw;
+    }
+
+  .buttonContainer{
+    display: flex;
+    flex-direction: row;
+    gap: 1vw;
+  }
+
+  .navbarButton{
+    width: 10vw;
+  }
+
+
+
+
+
