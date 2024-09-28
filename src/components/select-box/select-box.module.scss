@@ -29,7 +29,7 @@
     }
   }
 
-  input {
+  select {
     background: none;
     background-color: var(--background);
     color: var(--text);
@@ -40,11 +40,6 @@
     height: 100%;
     border: 1px solid var(--disabled);
     border-radius: 5px;
-    box-sizing: border-box;
-
-    &[type="password"] {
-      letter-spacing: 0.3em;
-    }
 
     &:focus {
       outline: none;
