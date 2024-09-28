@@ -3,6 +3,14 @@
   margin: 45px 0;
   min-width: 300px;
 
+  &.required::before {
+    content: "*";
+    color: red;
+    position: absolute;
+    top: -5px;
+    left: -5px;
+  }
+
   label {
     color: var(--disabled);
     font-size: 16px;

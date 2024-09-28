@@ -5,7 +5,9 @@ type Props = Omit<React.ComponentProps<"input">, "className"> & {
 };
 const Input = (props: Props) => {
   return (
-    <div className={styles.container}>
+    <div
+      className={`${styles.container} ${props.required ? styles.required : ""}`}
+    >
       <input {...props} />
       <label
         className={
