@@ -7,7 +7,13 @@ const Input = (props: Props) => {
   return (
     <div className={styles.container}>
       <input {...props} />
-      <label htmlFor="">{props.label}</label>
+      <label
+        className={
+          props.value && props.value.toString().length > 0 ? styles.shrink : ""
+        }
+      >
+        {props.label}
+      </label>
     </div>
   );
 };
