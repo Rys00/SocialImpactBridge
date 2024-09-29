@@ -3,12 +3,14 @@ import "./App.css";
 import NgoForm from "./components/forms/ngo-form.component";
 import SignUpForm from "./components/forms/sign-up-form.component";
 import Navbar from "./components/navbar/navbar.component";
+import HomePage from "./components/pages/home_page/home-page.component";
 import RegistrationPage from "./pages/registration";
 
 function App() {
   return (
     <Routes>
       <Route path="/" element={<Navbar />}>
+        <Route index element={<HomePage />} />
         <Route path="registration" element={<RegistrationPage />}>
           <Route index element={<SignUpForm />} />
           <Route path="ngo-form" element={<NgoForm />} />
