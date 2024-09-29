@@ -6,9 +6,6 @@ import Navbar from "./components/navbar/navbar.component";
 import HomePage from "./pages/home_page/home-page.component";
 import NgoPage from "./pages/ngo_page/ngo-page.component";
 import RegistrationPage from "./pages/registration";
-import NgoInfoPage from "./pages/info_pages/ngo_info_page/ngo-info-page.tsx";
-import VolunteerInfoPage from "./pages/info_pages/volunteer_info_page/volunteer-info-page.tsx";
-import CompanyInfoPage from "./pages/info_pages/company_info_page/company-info-page.tsx";
 
 function App() {
   return (
