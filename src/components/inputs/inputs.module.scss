@@ -29,6 +29,8 @@
     }
   }
 
+  input,
+  select,
   textarea {
     background: none;
     background-color: var(--background);
@@ -37,12 +39,10 @@
     padding: 10px;
     display: block;
     width: 100%;
-    height: auto;
+    height: 100%;
     border: 1px solid var(--disabled);
     border-radius: 5px;
     box-sizing: border-box;
-    resize: none;
-    overflow: hidden;
 
     &[type="password"] {
       letter-spacing: 0.3em;
@@ -64,5 +64,10 @@
         color: var(--primary);
       }
     }
+  }
+
+  textarea {
+    resize: none;
+    overflow: hidden;
   }
 }

@@ -1,4 +1,4 @@
-import styles from "./input.module.scss";
+import styles from "./inputs.module.scss";
 
 type Props = Omit<React.ComponentProps<"input">, "className"> & {
   label: string;
