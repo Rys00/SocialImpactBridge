@@ -13,7 +13,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 100px;
+  min-width: 100px;
+  padding: 10px;
   height: 35px;
   background-color: var(--background);
   color: var(--text);

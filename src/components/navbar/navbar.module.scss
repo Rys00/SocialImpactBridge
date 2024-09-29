@@ -14,19 +14,23 @@
 }
 
 .logo {
-  height: 2vw;
   width: 15vw;
-  font-weight: bold;
-  color: var(--primary);
-  position: relative;
-  padding-left: 10px;
+  height: 2vw;
+  display: flex;
+  justify-content: center;
+  div {
+    color: var(--primary);
+    font-weight: bold;
+    position: relative;
+    padding-left: 40px;
 
-  img {
-    position: absolute;
-    top: 50%;
-    left: 10px;
-    transform: translate(0, -50%);
-    height: 40px;
+    img {
+      position: absolute;
+      top: 50%;
+      left: 0;
+      transform: translate(0, -50%);
+      height: 40px;
+    }
   }
 }
 

@@ -8,8 +8,10 @@ function Navbar() {
     <>
       <div className={styles.navbarContainer}>
         <Link to="/" className={styles.logo}>
-          <img src={Logo} />
-          ImpactLink
+          <div>
+            <img src={Logo} />
+            ImpactLink
+          </div>
         </Link>
         <div className={styles.buttonContainer}>
           <NavLink

@@ -1,15 +1,15 @@
 import { ChangeEvent, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useAppDispatch, useAppSelector } from "../../store/hooks";
-import { selectNgoData } from "../../store/register-form/register-form.selector";
-import { setNgoData } from "../../store/register-form/register-form.slice";
+import { selectBusinessData } from "../../store/register-form/register-form.selector";
+import { setBusinessData } from "../../store/register-form/register-form.slice";
 import Button from "../button/button.component";
 import Input from "../inputs/input.component";
 import TextArea from "../inputs/textarea.component";
 import styles from "./forms.module.scss";
 
-const NgoForm = () => {
-  const formFields = useAppSelector(selectNgoData);
+const BusinessForm = () => {
+  const formFields = useAppSelector(selectBusinessData);
   const {
     krs,
     nazwa,
@@ -24,7 +24,6 @@ const NgoForm = () => {
     mail,
     adresStrony,
     data,
-    celDzialania,
   } = formFields;
 
   const [fetchEnabled, setFetchEnabled] = useState(false);
@@ -46,33 +45,32 @@ const NgoForm = () => {
   ) => {
     const { name, value } = event.target;
     if (name == "krs" && !value.match(/^\d{0,10}$/)) return;
-    dispatch(setNgoData({ ...formFields, [name]: value }));
+    dispatch(setBusinessData({ ...formFields, [name]: value }));
   };
 
   const fetchData = async () => {
     setFetchEnabled(false);
     const res = await fetch(
-      `https://api-krs.ms.gov.pl/api/krs/OdpisAktualny/${krs}?rejestr=S&format=json`
+      `https://api-krs.ms.gov.pl/api/krs/OdpisAktualny/${krs}?rejestr=P&format=json`
     );
     if (res.status === 404) {
-      setErrorMessage("Nie znaleziono organizacji z podanym numerem KRS!");
-      setDataVisible(true);
+      setErrorMessage("Nie znaleziono firmy z podanym numerem KRS!");
       setFetchEnabled(true);
+      setDataVisible(true);
       return;
     }
     if (!res.ok) {
       setErrorMessage("Wystąpił błąd");
-      setDataVisible(true);
       setFetchEnabled(true);
+      setDataVisible(true);
       return;
     }
     setErrorMessage("");
     const data = (await res.json()).odpis;
     const nag = data.naglowekA;
     const d1 = data.dane.dzial1;
-    const d3 = data.dane.dzial3;
     dispatch(
-      setNgoData({
+      setBusinessData({
         ...formFields,
         nazwa: d1.danePodmiotu.nazwa,
         nip: d1.danePodmiotu.identyfikatory.nip,
@@ -86,12 +84,10 @@ const NgoForm = () => {
         mail: d1.siedzibaIAdres.adresPocztyElektronicznej || "",
         adresStrony: d1.siedzibaIAdres.adresStronyInternetowej || "",
         data: nag.dataRejestracjiWKRS,
-        celDzialania: d3.celDzialaniaOrganizacji.celDzialania,
       })
     );
-    setDataVisible(true);
     setFetchEnabled(true);
-    console.log(data);
+    setDataVisible(true);
   };
 
   return (
@@ -101,7 +97,7 @@ const NgoForm = () => {
         navigate("#");
       }}
     >
-      <h1>Dane organizacji</h1>
+      <h1>Dane firmy</h1>
       <div className={styles.horizontal}>
         <Input
           label="Numer KRS"
@@ -152,13 +148,6 @@ const NgoForm = () => {
               required
             />
             <Input label="Adres strony" value={adresStrony} disabled />
-            <TextArea
-              name="celDzialania"
-              label="Cel działania"
-              value={celDzialania}
-              onChange={handleChange}
-              required
-            />
           </>
         )}
       </div>
@@ -166,4 +155,4 @@ const NgoForm = () => {
   );
 };
 
-export default NgoForm;
+export default BusinessForm;
