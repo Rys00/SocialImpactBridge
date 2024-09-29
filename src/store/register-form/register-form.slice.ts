@@ -22,6 +22,7 @@ type State = {
     adresStrony: string;
     data: string;
     celDzialania: string;
+    przedmiotyDzialalnosci: string;
   };
   businessData: {
     krs: string;
@@ -73,6 +74,7 @@ const INITIAL_STATE: State = {
     adresStrony: "",
     data: "",
     celDzialania: "",
+    przedmiotyDzialalnosci: "",
   },
   businessData: {
     krs: "",

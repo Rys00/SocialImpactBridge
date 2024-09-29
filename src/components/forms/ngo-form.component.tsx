@@ -25,6 +25,7 @@ const NgoForm = () => {
     adresStrony,
     data,
     celDzialania,
+    // przedmiotyDzialalnosci,
   } = formFields;
 
   const [fetchEnabled, setFetchEnabled] = useState(false);
@@ -68,9 +69,33 @@ const NgoForm = () => {
     }
     setErrorMessage("");
     const data = (await res.json()).odpis;
+    console.log(data);
+
     const nag = data.naglowekA;
     const d1 = data.dane.dzial1;
     const d3 = data.dane.dzial3;
+
+    const pkds: {
+      nieodplatnyPkd: { kodKlasa: string }[];
+      odplatnyPkd: { kodKlasa: string }[];
+    } = d3.przedmiotDzialalnosciOPP;
+
+    for (const category of Object.values(pkds)) {
+      for (const pkd of category) {
+        const res2 = await fetch(
+          `http://34.116.230.160:8080/api/pkdCodes/getByClassCode`,
+          {
+            headers: { contentType: "application/json" },
+            method: "post",
+            body: JSON.stringify({
+              codeClass: pkd.kodKlasa,
+            }),
+          }
+        );
+        console.log(await res2.json());
+      }
+    }
+
     dispatch(
       setNgoData({
         ...formFields,
@@ -159,6 +184,7 @@ const NgoForm = () => {
               onChange={handleChange}
               required
             />
+            <div className={styles.tags}></div>
           </>
         )}
       </div>
