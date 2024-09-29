@@ -1,5 +1,5 @@
 :root {
-  font-family: 'Rounded Mplus 1c', sans-serif;
+  font-family: "Rounded Mplus 1c", sans-serif;
   line-height: 1.5;
   font-weight: 400;
   width: 100%;
@@ -24,6 +24,11 @@
 a {
   appearance: none;
   text-decoration: none;
+  color: inherit;
+}
+
+a.active {
+  color: var(--primary);
 }
 
 body {
