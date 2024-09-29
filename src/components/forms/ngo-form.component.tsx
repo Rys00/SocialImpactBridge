@@ -4,9 +4,9 @@ import { useAppDispatch, useAppSelector } from "../../store/hooks";
 import { selectNgoData } from "../../store/register-form/register-form.selector";
 import { setNgoData } from "../../store/register-form/register-form.slice";
 import Button from "../button/button.component";
-import Input from "../input/input.component";
-import TextArea from "../textarea/textarea.component";
-import styles from "./ngo-form.module.scss";
+import Input from "../inputs/input.component";
+import TextArea from "../inputs/textarea.component";
+import styles from "./forms.module.scss";
 
 const NgoForm = () => {
   const formFields = useAppSelector(selectNgoData);
@@ -61,6 +61,7 @@ const NgoForm = () => {
       setDataVisible(true);
       return;
     }
+    setErrorMessage("");
     const data = (await res.json()).odpis;
     const nag = data.naglowekA;
     const d1 = data.dane.dzial1;

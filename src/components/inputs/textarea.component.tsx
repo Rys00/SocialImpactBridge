@@ -1,5 +1,5 @@
 import { useEffect, useRef } from "react";
-import styles from "./textarea.module.scss";
+import styles from "./inputs.module.scss";
 
 type Props = Omit<React.ComponentProps<"textarea">, "className"> & {
   label: string;

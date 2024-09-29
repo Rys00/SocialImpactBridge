@@ -1,7 +1,7 @@
-.navbarContainer{
-width: 100%;
+.navbarContainer {
+  width: 100%;
   background-color: var(--background);
-  height: 3vw;
+  height: 50px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -13,34 +13,39 @@ width: 100%;
   box-shadow: 0 0 5px #0005;
 }
 
-  .logo{
-    height: 2vw;
-    width: 15vw;
-  }
+.logo {
+  height: 2vw;
+  width: 15vw;
+  font-weight: bold;
+  color: var(--primary);
+}
 
-  .loginContainer{
-    display: flex;
-    flex-direction: row-reverse;
-    gap: 1vw;
-    align-items: center;
-    width: 15vw;
-  }
+.loginContainer {
+  display: flex;
+  flex-direction: row-reverse;
+  gap: 1vw;
+  align-items: center;
+  width: 15vw;
+}
 
-    .loginButton{
-        margin-right: 2vw;
-    }
+.loginButton {
+  margin-right: 2vw;
+}
 
-  .buttonContainer{
-    display: flex;
-    flex-direction: row;
-    gap: 1vw;
-  }
+.buttonContainer {
+  display: flex;
+  flex-direction: row;
+  gap: 1vw;
+}
 
-  .navbarButton{
-    width: 10vw;
-  }
+.navbarButton {
+  width: 12vw;
+}
 
-
-
-
-
+.main {
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 100px 0;
+}

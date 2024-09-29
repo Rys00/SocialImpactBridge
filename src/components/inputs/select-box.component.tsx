@@ -1,4 +1,4 @@
-import styles from "./select-box.module.scss";
+import styles from "./inputs.module.scss";
 
 type Props = Omit<React.ComponentProps<"select">, "className"> & {
   label: string;

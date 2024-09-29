@@ -29,7 +29,9 @@
     }
   }
 
-  select {
+  input,
+  select,
+  textarea {
     background: none;
     background-color: var(--background);
     color: var(--text);
@@ -40,6 +42,16 @@
     height: 100%;
     border: 1px solid var(--disabled);
     border-radius: 5px;
+    box-sizing: border-box;
+
+    &[type="password"] {
+      letter-spacing: 0.3em;
+    }
+
+    &:disabled {
+      color: var(--disabled);
+      border-color: var(--disabled);
+    }
 
     &:focus {
       outline: none;
@@ -52,5 +64,10 @@
         color: var(--primary);
       }
     }
+  }
+
+  textarea {
+    resize: none;
+    overflow: hidden;
   }
 }
