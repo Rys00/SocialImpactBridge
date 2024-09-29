@@ -86,13 +86,14 @@ const NgoForm = () => {
           `http://34.116.230.160:8080/api/pkdCodes/getByClassCode`,
           {
             headers: { contentType: "application/json" },
-            method: "post",
+            method: "POST",
             body: JSON.stringify({
               codeClass: pkd.kodKlasa,
             }),
           }
         );
         console.log(await res2.json());
+        console.log("hello world");
       }
     }
 
