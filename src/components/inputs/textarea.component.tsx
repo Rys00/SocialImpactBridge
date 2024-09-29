@@ -17,7 +17,7 @@ const TextArea = (props: Props) => {
     <div
       className={`${styles.container} ${props.required ? styles.required : ""}`}
     >
-      <textarea ref={ref} {...props} />
+      <textarea  {...props} />
       <label
         className={
           props.value && props.value.toString().length > 0 ? styles.shrink : ""

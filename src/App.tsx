@@ -9,19 +9,19 @@ import RegistrationPage from "./pages/registration";
 
 function App() {
   return (
-    <Routes>
-      <Route path="/" element={<Navbar />}>
-        <Route index element={<HomePage />} />
-        <Route path="ngo" element={<NgoPage />} />
-        <Route path="registration" element={<RegistrationPage />}>
-          <Route index element={<SignUpForm />} />
-          <Route path="ngo-form" element={<NgoForm />} />
-          <Route path="business-form" element={<NgoForm />} />
-          <Route path="volunteer-form" element={<NgoForm />} />
-          <Route path="sponsor-form" element={<NgoForm />} />
+      <Routes>
+        <Route path="/" element={<Navbar />}>
+          <Route index element={<HomePage />} />
+          <Route path="ngo" element={<NgoPage />} />
+          <Route path="registration" element={<RegistrationPage />}>
+            <Route index element={<SignUpForm />} />
+            <Route path="ngo-form" element={<NgoForm />} />
+            <Route path="business-form" element={<NgoForm />} />
+            <Route path="volunteer-form" element={<NgoForm />} />
+            <Route path="sponsor-form" element={<NgoForm />} />
+          </Route>
         </Route>
-      </Route>
-    </Routes>
+      </Routes>
   );
 }
 
