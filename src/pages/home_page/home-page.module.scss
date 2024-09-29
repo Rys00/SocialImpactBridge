@@ -22,7 +22,7 @@
 
 .selectedCard {
   border-radius: 5px;
-  background: var(--primary);
+  background: var(--secondary);
   padding-left: 12px;
   padding-right: 12px ;
   height: 32px;
@@ -33,7 +33,6 @@
 
   border-radius: 5px;
   border: 2px solid black;
-  padding: 20px;
   padding-left: 12px;
   padding-right: 12px ;
   height: 32px;
@@ -60,6 +59,7 @@
   border: none;
   width: 70px;
   height: 70px;
+  border-radius: 5px;
 
 
 }

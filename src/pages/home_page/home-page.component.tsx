@@ -9,20 +9,17 @@ const HomePage = () => {
         <div className={styles.row}>
 
             <SearchBar />
-          <button className="material-symbols-outlined" style={{
-              height:'70px'
-              ,width:'70px'
-              ,background:'var(--secondary)', outline:'none', border:'none', marginLeft: '24px'
+          <button className={`${styles.searchButton} material-symbols-outlined` } style={{
+              marginLeft: '24px'
           }}>
 search
 </button></div>
-          <div className={styles.row}>
+          <div className={styles.row} style={{marginTop:"8px"}}>
               <div>Organization Type:</div>
-              <div className={styles.selectedCard}>NGOs</div>
-              <div>Companies</div>
-              <div>Volunteers</div>
+              <div className={styles.selectedCard} style={{marginLeft: '18px'}}>NGOs</div>
+              <div className={styles.unselectedCard} style={{marginLeft: '12px'}}>Companies</div>
+              <div className={styles.unselectedCard} style={{marginLeft: '12px'}}>Volunteers</div>
           </div>
-          {" "}
           <div className={styles.row}>
               <div>Filters:</div>
               <div>Tags</div>
