@@ -14,15 +14,29 @@ function Navbar() {
         </Link>
         <div className={styles.buttonContainer}>
           <NavLink
-            to="/ngo"
+            to="/ngo-info"
             className={({ isActive }) =>
               `${styles.navbarButton} ${isActive ? "active" : ""}`
             }
           >
             Dla NGO
-          </NavLink>
-          <div className={styles.navbarButton}>Dla Wolontariuszy</div>
-          <div className={styles.navbarButton}>Dla Firm</div>
+          </NavLink >
+          <NavLink
+              to="/volunteer-info"
+              className={({ isActive }) =>
+                  `${styles.navbarButton} ${isActive ? "active" : ""}`
+              }
+          >
+            Dla Wolontariuszy
+          </NavLink >
+          <NavLink
+              to="/company-info"
+              className={({ isActive }) =>
+                  `${styles.navbarButton} ${isActive ? "active" : ""}`
+              }
+          >
+            Dla Firm
+          </NavLink >
         </div>
         <div className={styles.loginContainer}>
           <div className={styles.loginButton}>
