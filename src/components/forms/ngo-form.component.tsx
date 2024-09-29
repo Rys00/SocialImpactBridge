@@ -33,10 +33,8 @@ const NgoForm = () => {
   const [errorMessage, setErrorMessage] = useState("");
 
   useEffect(() => {
-    if (krs.length === 10) {
-      setFetchEnabled(true);
-      fetchData();
-    } else setFetchEnabled(false);
+    if (krs.length === 10) setFetchEnabled(true);
+    else setFetchEnabled(false);
   }, [krs]);
 
   const dispatch = useAppDispatch();
@@ -51,20 +49,17 @@ const NgoForm = () => {
   };
 
   const fetchData = async () => {
-    setFetchEnabled(false);
     const res = await fetch(
       `https://api-krs.ms.gov.pl/api/krs/OdpisAktualny/${krs}?rejestr=S&format=json`
     );
     if (res.status === 404) {
       setErrorMessage("Nie znaleziono organizacji z podanym numerem KRS!");
       setDataVisible(true);
-      setFetchEnabled(true);
       return;
     }
     if (!res.ok) {
       setErrorMessage("Wystąpił błąd");
       setDataVisible(true);
-      setFetchEnabled(true);
       return;
     }
     setErrorMessage("");
@@ -114,8 +109,6 @@ const NgoForm = () => {
         celDzialania: d3.celDzialaniaOrganizacji.celDzialania,
       })
     );
-    setDataVisible(true);
-    setFetchEnabled(true);
     console.log(data);
   };
 
@@ -145,7 +138,7 @@ const NgoForm = () => {
           Pobierz
         </Button>
       </div>
-      <div className={dataVisible ? styles.data : styles.hidden}>
+      <div className={`${styles.data} ${dataVisible ? "" : styles.hidden}`}>
         {errorMessage ? (
           <span className={styles.error}>{errorMessage}</span>
         ) : (

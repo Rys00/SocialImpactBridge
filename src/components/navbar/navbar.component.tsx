@@ -7,11 +7,10 @@ function Navbar() {
   return (
     <>
       <div className={styles.navbarContainer}>
-        <Link to="/" className={styles.logo}>
-          <div>
-            <img src={Logo} />
-            ImpactLink
-          </div>
+
+        <Link to="/" className={styles.logoContainer}>
+          <img src={Logo} className={styles.logo} />
+          <p>ImpactLink</p>
         </Link>
         <div className={styles.buttonContainer}>
           <NavLink

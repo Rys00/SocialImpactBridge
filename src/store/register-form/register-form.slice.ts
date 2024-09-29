@@ -74,7 +74,6 @@ const INITIAL_STATE: State = {
     adresStrony: "",
     data: "",
     celDzialania: "",
-    przedmiotyDzialalnosci: "",
   },
   businessData: {
     krs: "",
@@ -109,15 +108,8 @@ export const registerFormSlice = createSlice({
     setNgoData(state, action) {
       state.ngoData = action.payload;
     },
-    setBusinessData(state, action) {
-      state.businessData = action.payload;
-    },
-    setVolunteerData(state, action) {
-      state.volunteerData = action.payload;
-    },
   },
 });
 
-export const { setSignUpData, setNgoData, setBusinessData, setVolunteerData } =
-  registerFormSlice.actions;
+export const { setSignUpData, setNgoData } = registerFormSlice.actions;
 export const registerFormReducer = registerFormSlice.reducer;
