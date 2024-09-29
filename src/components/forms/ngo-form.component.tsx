@@ -25,7 +25,7 @@ const NgoForm = () => {
     adresStrony,
     data,
     celDzialania,
-    // przedmiotyDzialalnosci,
+    przedmiotyDzialalnosci,
   } = formFields;
 
   const [fetchEnabled, setFetchEnabled] = useState(false);
@@ -76,23 +76,27 @@ const NgoForm = () => {
     const d3 = data.dane.dzial3;
 
     const pkds: {
-      nieodplatnyPkd: { kodKlasa: string }[];
-      odplatnyPkd: { kodKlasa: string }[];
+      nieodplatnyPkd: { kodKlasa: string; opis: string }[];
+      odplatnyPkd: { kodKlasa: string; opis: string }[];
     } = d3.przedmiotDzialalnosciOPP;
 
-    for (const category of Object.values(pkds)) {
-      for (const pkd of category) {
-        const res2 = await fetch(
-          `http://34.116.230.160:8080/api/pkdCodes/getByClassCode`,
-          {
-            headers: { contentType: "application/json" },
-            method: "post",
-            body: JSON.stringify({
-              codeClass: pkd.kodKlasa,
-            }),
-          }
-        );
-        console.log(await res2.json());
+    console.log(pkds);
+
+    const tags = [];
+    for (const pkd of pkds.odplatnyPkd) {
+      const res2 = await fetch(
+        `http://34.116.230.160:8080/api/pkdCodes/getByClassCode`,
+        {
+          headers: { "Content-Type": "application/json" },
+          method: "POST",
+          body: JSON.stringify({
+            codeClass: pkd.kodKlasa,
+          }),
+        }
+      );
+      if (res2.ok) {
+        const { lore } = await res2.json();
+        tags.push(pkd.opis);
       }
     }
 
@@ -112,6 +116,7 @@ const NgoForm = () => {
         adresStrony: d1.siedzibaIAdres.adresStronyInternetowej || "",
         data: nag.dataRejestracjiWKRS,
         celDzialania: d3.celDzialaniaOrganizacji.celDzialania,
+        przedmiotyDzialalnosci: tags,
       })
     );
     setDataVisible(true);
@@ -184,7 +189,11 @@ const NgoForm = () => {
               onChange={handleChange}
               required
             />
-            <div className={styles.tags}></div>
+            <div className={styles.tags}>
+              {przedmiotyDzialalnosci.map((tag) => (
+                <div key={tag}>{tag}</div>
+              ))}
+            </div>
           </>
         )}
       </div>

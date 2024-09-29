@@ -59,4 +59,20 @@
       gap: 15px;
     }
   }
+
+  .tags {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+
+    div {
+      display: inline-block;
+      padding: 5px;
+      border-radius: 5px;
+      border: 1px solid var(--disabled);
+      text-transform: lowercase;
+    }
+  }
 }
