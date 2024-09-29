@@ -1,4 +1,5 @@
 import React, { useState, ChangeEvent, FormEvent } from "react";
+import styles from "../home-page.module.scss";
 
 const SearchBar: React.FC = () => {
     const [searchQuery, setSearchQuery] = useState<string>("");
@@ -13,34 +14,16 @@ const SearchBar: React.FC = () => {
     };
 
     return (
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit} style={{width:'100%'}}>
             <input
                 type="text"
                 value={searchQuery}
+                className={styles.searchBar}
                 onChange={handleInputChange}
-                placeholder="Search..."
-                style={{
-                    width: '300px',        // Width of the search bar
-                    padding: '10px',        // Padding inside the search bar
-                    borderRadius: '20px',   // Rounded edges
-                    border: '1px solid #ccc', // Border style
-                    outline: 'none',
-                }}
+                placeholder="Search For..."
+
             />
-            <button
-                type="submit"
-                style={{
-                    marginLeft: '10px',     // Space between input and button
-                    padding: '10px',
-                    borderRadius: '20px',   // Rounded edges for the button
-                    backgroundColor: '#4CAF50',
-                    color: 'white',
-                    border: 'none',
-                    cursor: 'pointer',
-                }}
-            >
-                Search
-            </button>
+
         </form>
     );
 }

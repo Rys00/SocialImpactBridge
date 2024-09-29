@@ -1,14 +1,18 @@
 import styles from './home-page.module.scss';
+import SearchBar from "./components/searchbar.component.tsx";
 // import SearchBar from "./components/searchbar.component.tsx";
 
 const HomePage = () => {
   return (
       <div style={{width:'70%', height:"70px"}}>
 
-        <div className={styles.row}>  <form inputMode={"text"} className={styles.searchBar} >Search For NGOs</form>
+        <div className={styles.row}>
+
+            <SearchBar />
           <button className="material-symbols-outlined" style={{
               height:'70px'
               ,width:'70px'
+              ,background:'var(--secondary)', outline:'none', border:'none', marginLeft: '24px'
           }}>
 search
 </button></div>
