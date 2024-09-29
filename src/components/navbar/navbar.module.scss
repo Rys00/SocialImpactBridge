@@ -1,7 +1,7 @@
 .navbarContainer {
   width: 100%;
   background-color: var(--background);
-  height: 50px;
+  height: 60px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -13,22 +13,27 @@
   box-shadow: 0 0 5px #0005;
 }
 
-.logo {
-  height: 2vw;
+.logoContainer{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
   width: 15vw;
+}
+
+.logo {
+  height: 50px;
   font-weight: bold;
   color: var(--primary);
-  position: relative;
-  padding-left: 10px;
-
-  img {
-    position: absolute;
-    top: 50%;
-    left: 10px;
-    transform: translate(0, -50%);
-    height: 40px;
   }
+
+p{
+  font-weight: bold;
+    color: var(--primary);
+
 }
+
 
 .loginContainer {
   display: flex;
