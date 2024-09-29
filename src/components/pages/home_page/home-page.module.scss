@@ -1,0 +1,27 @@
+
+
+.listTile {
+  background: var(--secondary);
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  padding: 8px;
+}
+
+.selectedCard {
+  border-radius: 5px;
+  background: var(--primary);
+  padding-left: 12px;
+  padding-right: 12px ;
+  height: 32px;
+  align-content: center;
+}
+
+.unselectedCard {
+  border-radius: 5px;
+  border: 2px solid black;
+  padding: 20px;
+  padding-left: 12px;
+  padding-right: 12px ;
+  height: 32px;
+  align-content: center;
+}

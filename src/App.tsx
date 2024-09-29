@@ -1,10 +1,10 @@
 import "./App.css";
-import SignUpForm from "./components/forms/sign-up-form.component";
+import HomePageComponent from "./components/pages/home_page/home-page.component.tsx";
 
 function App() {
   return (
     <div>
-          <SignUpForm />
+      <HomePageComponent />
     </div>
   );
 }
