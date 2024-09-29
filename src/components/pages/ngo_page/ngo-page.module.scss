@@ -1,0 +1,53 @@
+.backgroundContainer {
+  background: var(--accent);
+  border-radius: 5px;
+  padding: 16px 32px;
+
+}
+
+.mainTitle {
+  font-size: 24px;
+  font-weight: bolder;
+  margin-bottom: 32px;
+}
+
+.title {
+  font-size: 21px;
+  margin-bottom: 16px;
+}
+.subtitle {
+  font-size: 18px;
+  font-weight: lighter;
+}
+
+.description {
+  font-size: 16px;
+  font-weight: lighter;
+}
+
+.rowWithSpaceAround {
+  display: flex;
+  justify-content: space-around;
+}
+
+.rowCentered {
+  display: flex;
+  justify-content: center;
+}
+
+.copyButton {
+  background: transparent;
+  border: none;
+  cursor: copy;
+  color: var(--text);
+
+}
+
+hr.rounded {
+  border-top: 3px solid white;
+  border-radius: 5px;
+  margin-top: 32px;
+  margin-bottom: 16px;
+}
+
+
